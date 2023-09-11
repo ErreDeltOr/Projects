@@ -1,0 +1,199 @@
+TEST1:
+
+program {
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+TEST2:
+
+ {
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO KEYWORD "program" !
+
+TEST3:
+
+
+program 
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO "{" AFTER "program" !
+
+TEST4:
+
+
+program {
+    int a c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO ";" AFTER VARIABLE DECLARATION!
+
+TEST5:
+
+program {
+    int a c=3, b; 
+    if a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO "(" AFTER "if"!
+
+TEST6:
+
+program {
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3) {
+        b=-(not ((c+a)/c)*2; c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO ")" AFTER STATEMENT!
+
+TEST7:
+
+program {
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    while (a == -3;) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:NO ")" AFTER "while"!
+
+TEST8:
+
+program {
+    int a, c=3, b; 
+    if (a==c) read(a);
+    else { write(b); } /* comment */
+
+    whie (a == -3;) {
+        b=-(not ((c+a)/c)*2); c=a;
+    }
+    a = b + -c;
+} 
+@
+
+:ERROR:SYNTAX ERROR WHILE ASSIGNING!
+
+TEST9:
+
+program {
+   int i,j,sum;
+   sum = 0;
+   read(i);
+   if (i >=1) {
+   j = 1;
+   while(j <= i) {
+       sum = sum + j;
+   }
+   write(sum);
+   }
+} 
+@
+
+:
+
+TEST 10:
+
+program {
+   int i;
+   read(i);
+   write(i*i);
+} 
+@
+
+:
+
+TEST 11:
+
+program {
+   int n, j = 1, pr=1;
+   read(n);
+   while (j <= n) {
+       pr = pr*j;
+   }
+   write(pr);
+} 
+@
+
+:
+
+TEST 12:
+
+program {
+   int i = 0, j = 1, n, s, tmp;
+   read(n);
+   s = n-2;
+   if (n == 1) {
+       write(0);
+   }
+   if (n==2) {
+       write(1);
+   }
+   if (n > 2) {
+       while (s > 0) {
+           tmp = j;
+           j = j + i;
+           i = j;
+           s=s-1;
+       }
+       write(j);
+   }
+}
+   
+@
+
+:
+
+
